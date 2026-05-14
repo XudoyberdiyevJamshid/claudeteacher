@@ -1,3 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import 'tailwindcss';
+.btn {
+  padding: 10px 20px;
+  background-color: rgb(122, 238, 122);
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+}
+
+.inp {
+  border: 1px solid black;
+  outline: none;
+}

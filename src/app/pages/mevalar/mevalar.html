@@ -1,0 +1,18 @@
+<h1>Mevalar ro'yxati</h1>
+
+<div>
+  <input [(ngModel)]="yangi_nomi" placeholder="Meva nomi" />
+  <input [(ngModel)]="yangi_rangi" placeholder="Rangi" />
+  <input type="number" [(ngModel)]="yangi_narxi" placeholder="Narxi" />
+  <button (click)="qoshish()">Qo'shish</button>
+</div>
+
+@for (meva of mevaService.mevalar; track meva.nomi; let ind = $index) {
+  <app-meva-card
+    [nomi]="meva.nomi"
+    [rangi]="meva.rangi"
+    [narxi]="meva.narxi"
+    (ochirildi)="ochirish(ind)"
+  >
+  </app-meva-card>
+}
