@@ -11,6 +11,6 @@ export class Savat {
   constructor(public mevaservice: MevaService) {}
 
   ochirish(index: number) {
-    this.mevaservice.savatdanOchirish(index);
+    this.mevaservice.savatdanOchir(index);
   }
 }

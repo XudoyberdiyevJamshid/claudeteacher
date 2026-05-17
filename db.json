@@ -1,0 +1,53 @@
+{
+  "mevalar": [
+    {
+      "id": "1",
+      "nomi": "Olma",
+      "rangi": "Qizil",
+      "narxi": 5000
+    },
+    {
+      "id": "2",
+      "nomi": "Banan",
+      "rangi": "Sariq",
+      "narxi": 6000
+    },
+    {
+      "id": "3",
+      "nomi": "Uzum",
+      "rangi": "Binafsha",
+      "narxi": 7000
+    },
+    {
+      "id": "4",
+      "nomi": "Nok",
+      "rangi": "Yashil",
+      "narxi": 8000
+    },
+    {
+      "nomi": "dsad",
+      "rangi": "dasd",
+      "narxi": 788,
+      "id": "KSEcqDDbPRI"
+    },
+    {
+      "nomi": "dasda",
+      "rangi": "dasd",
+      "narxi": 45454,
+      "id": "g4T_NlGLKzg"
+    },
+    {
+      "nomi": "qwerte",
+      "rangi": "fsdfsdf",
+      "narxi": 4545454,
+      "id": "orxxWJICpCQ"
+    },
+    {
+      "nomi": "qqqqqqqq",
+      "rangi": "qqqqqqqqqqq",
+      "narxi": 88888888888,
+      "id": "weqeqdqw89787"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -28,10 +28,11 @@ export class Mevalar {
     }
   }
 
-  ochirish(index: number) {
-    this.mevaService.ochirish(index);
+  ochirish(id: string) {
+    this.mevaService.ochirish(id);
   }
-  savatgaQoshish(meva: { nomi: string; rangi: string; narxi: number }) {
-    this.mevaService.savatgaQoshish(meva);
+
+  savatgaQosh(meva: { id: string; nomi: string; rangi: string; narxi: number }) {
+    this.mevaService.savatgaQosh(meva);
   }
 }

@@ -7,13 +7,13 @@
   <button (click)="qoshish()">Qo'shish</button>
 </div>
 
-@for (meva of mevaService.mevalar; track meva.nomi; let ind = $index) {
+@for (meva of mevaService.mevalar(); track meva.id) {
   <app-meva-card
     [nomi]="meva.nomi"
     [rangi]="meva.rangi"
     [narxi]="meva.narxi"
-    (ochirildi)="ochirish(ind)"
-    (savatgaqoshildi)="savatgaQoshish(meva)"
+    (ochirildi)="ochirish(meva.id)"
+    (savatgaqoshildi)="savatgaQosh(meva)"
   >
   </app-meva-card>
 }

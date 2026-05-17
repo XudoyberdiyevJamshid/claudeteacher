@@ -1,13 +1,13 @@
 <h1>Savat</h1>
 
-@if (mevaservice.savat.length === 0) {
+@if (mevaservice.savat().length === 0) {
   <p>Savat bo'sh</p>
 } @else {
-  @for (meva of mevaservice.savat; track meva.nomi; let ind = $index) {
+  @for (meva of mevaservice.savat(); track meva.nomi; let ind = $index) {
     <div>
       <p>{{ meva.nomi }} — {{ meva.narxi }} so'm</p>
       <button class="btn" (click)="ochirish(ind)">O'chirish</button>
     </div>
   }
-  <h2>Jami: {{ mevaservice.jami }} so'm</h2>
+  <h2>Jami: {{ mevaservice.jami() }} so'm</h2>
 }

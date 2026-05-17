@@ -1,34 +1,51 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { computed, Injectable, signal } from '@angular/core';
+
+export interface Meva {
+  id: string;
+  nomi: string;
+  rangi: string;
+  narxi: number;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class MevaService {
-  mevalar = [
-    { nomi: 'Olma', rangi: 'Qizil', narxi: 5000 },
-    { nomi: 'Banan', rangi: 'Sariq', narxi: 6000 },
-    { nomi: 'Uzum', rangi: 'Binafsha', narxi: 7000 },
-    { nomi: 'Nok', rangi: 'Yashil', narxi: 8000 },
-  ];
+  private url = 'http://localhost:3000/mevalar';
 
-  savat: { nomi: string; rangi: string; narxi: number }[] = [];
+  mevalar = signal<Meva[]>([]);
+  savat = signal<Meva[]>([]);
 
-  qoshish(meva: { nomi: string; rangi: string; narxi: number }) {
-    this.mevalar.push(meva);
+  jami = computed(() => this.savat().reduce((sum, m) => sum + m.narxi, 0));
+
+  constructor(private http: HttpClient) {
+    this.hammamevalarni_ol();
   }
 
-  ochirish(index: number) {
-    this.mevalar.splice(index, 1);
+  hammamevalarni_ol() {
+    this.http.get<Meva[]>(this.url).subscribe((data) => {
+      this.mevalar.set(data);
+    });
   }
 
-  savatgaQoshish(meva: { nomi: string; rangi: string; narxi: number }) {
-    this.savat.push(meva);
-  }
-  savatdanOchirish(index: number) {
-    this.savat.splice(index, 1);
+  qoshish(meva: Omit<Meva, 'id'>) {
+    this.http.post<Meva>(this.url, meva).subscribe((yangi) => {
+      this.mevalar.update((m) => [...m, yangi]);
+    });
   }
 
-  get jami() {
-    return this.savat.reduce((sum, m) => sum + m.narxi, 0);
+  ochirish(id: string) {
+    this.http.delete(`${this.url}/${id}`).subscribe(() => {
+      this.mevalar.update((m) => m.filter((meva) => meva.id !== id));
+    });
+  }
+
+  savatgaQosh(meva: Meva) {
+    this.savat.update((s) => [...s, meva]);
+  }
+
+  savatdanOchir(index: number) {
+    this.savat.update((s) => s.filter((_, i) => i !== index));
   }
 }
