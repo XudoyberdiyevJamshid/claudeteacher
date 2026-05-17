@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet, RouterLinkWithHref, RouterLinkActive } from '@angular/router';
 import { MevaCard } from './meva-card/meva-card';
-import { MevaService } from './meva';
+import { MevaService } from './service/meva';
 
 @Component({
   selector: 'app-root',

@@ -1,9 +1,9 @@
 <h1>Mevalar ro'yxati</h1>
 
-<div>
-  <input [(ngModel)]="yangi_nomi" placeholder="Meva nomi" />
-  <input [(ngModel)]="yangi_rangi" placeholder="Rangi" />
-  <input type="number" [(ngModel)]="yangi_narxi" placeholder="Narxi" />
+<div class="flex gap-3">
+  <input class="inp" [(ngModel)]="yangi_nomi" placeholder="Meva nomi" />
+  <input class="inp" [(ngModel)]="yangi_rangi" placeholder="Rangi" />
+  <input class="inp" type="number" [(ngModel)]="yangi_narxi" placeholder="Narxi" />
   <button (click)="qoshish()">Qo'shish</button>
 </div>
 
@@ -13,6 +13,7 @@
     [rangi]="meva.rangi"
     [narxi]="meva.narxi"
     (ochirildi)="ochirish(ind)"
+    (savatgaqoshildi)="savatgaQoshish(meva)"
   >
   </app-meva-card>
 }

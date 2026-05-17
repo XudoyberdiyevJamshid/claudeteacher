@@ -18,7 +18,7 @@ export class MevaCard {
     this.tanland.emit(this.nomi);
   }
   savatgaqoshish() {
-    this.savatgaqoshildi.emit(this.narxi);
+    this.savatgaqoshildi.emit();
   }
   ochirish() {
     this.ochirildi.emit();

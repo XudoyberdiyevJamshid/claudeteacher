@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MevaCard } from '../../meva-card/meva-card';
-import { MevaService } from '../../meva';
+import { MevaService } from '../../service/meva';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-mevalar',
@@ -30,5 +30,8 @@ export class Mevalar {
 
   ochirish(index: number) {
     this.mevaService.ochirish(index);
+  }
+  savatgaQoshish(meva: { nomi: string; rangi: string; narxi: number }) {
+    this.mevaService.savatgaQoshish(meva);
   }
 }
