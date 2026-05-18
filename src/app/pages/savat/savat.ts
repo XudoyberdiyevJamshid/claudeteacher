@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MevaService } from '../../service/meva';
 
 @Component({
@@ -6,6 +6,7 @@ import { MevaService } from '../../service/meva';
   imports: [],
   templateUrl: './savat.html',
   styleUrl: './savat.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Savat {
   constructor(public mevaservice: MevaService) {}

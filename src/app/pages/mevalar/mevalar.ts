@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MevaCard } from '../../meva-card/meva-card';
 import { MevaService } from '../../service/meva';
 import { FormsModule } from '@angular/forms';
@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
   imports: [MevaCard, FormsModule],
   templateUrl: './mevalar.html',
   styleUrl: './mevalar.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Mevalar {
   yangi_nomi = '';

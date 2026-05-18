@@ -3,6 +3,11 @@
   <a routerLink="/mevalar" routerLinkActive="active">Mevalar</a>
   <a routerLink="/savat" routerLinkActive="active">Savat</a>
   <a routerLink="/meva-forma">Yangi meva</a>
+  @if (kirganmi()) {
+    <button (click)="chiqish()">Chiqish</button>
+  } @else {
+    <a routerLink="/login" routerLinkActive="active">Kirish</a>
+  }
 </nav>
 
 <router-outlet></router-outlet>

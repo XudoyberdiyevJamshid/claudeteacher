@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MevaService } from '../../service/meva';
 import { Router } from '@angular/router';
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   imports: [ReactiveFormsModule],
   templateUrl: './meva-forma.html',
   styleUrl: './meva-forma.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MevaForma {
   forma: FormGroup;
