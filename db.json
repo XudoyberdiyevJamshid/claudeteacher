@@ -47,6 +47,18 @@
       "rangi": "qqqqqqqqqqq",
       "narxi": 88888888888,
       "id": "weqeqdqw89787"
+    },
+    {
+      "nomi": "4545",
+      "rangi": "7878",
+      "narxi": 45454,
+      "id": "v60xgEGDKHQ"
+    },
+    {
+      "nomi": "sssssssssssssssssss",
+      "rangi": "ssssssssssssssssss",
+      "narxi": 10000000000000000,
+      "id": "4WCANVNkHPo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

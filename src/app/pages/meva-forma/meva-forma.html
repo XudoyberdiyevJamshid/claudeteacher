@@ -1,1 +1,29 @@
-<p>meva-forma works!</p>
+<h1>Yangi meva qo'shish</h1>
+
+<form [formGroup]="forma" (ngSubmit)="saqlash()" class="w-1/2 mx-auto flex flex-col gap-2">
+  <div class="flex flex-col gap-2">
+    <label>Meva nomi</label>
+    <input class="inp" formControlName="nomi" placeholder="Meva nomi" />
+    @if (forma.get('nomi')?.invalid && forma.get('nomi')?.touched) {
+      <p>Meva nomini kiriting!</p>
+    }
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label>Rangi</label>
+    <input class="inp" formControlName="rangi" placeholder="Rangi" />
+    @if (forma.get('rangi')?.invalid && forma.get('rangi')?.touched) {
+      <p>Rangini kiriting!</p>
+    }
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <label>Narxi</label>
+    <input class="inp" type="number" formControlName="narxi" placeholder="Narxi" />
+    @if (forma.get('narxi')?.invalid && forma.get('narxi')?.touched) {
+      <p>Narxini kiriting! (0 dan katta bo'lsin)</p>
+    }
+  </div>
+
+  <button type="submit" class="btn" [disabled]="forma.invalid">Saqlash</button>
+</form>
