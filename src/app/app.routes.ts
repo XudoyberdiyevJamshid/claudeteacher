@@ -9,16 +9,25 @@ import { Login } from './pages/login/login';
 export const routes: Routes = [
   {
     path: '',
-    component: BoshSahifa,
+
+    loadComponent: () => import('./pages/bosh-sahifa/bosh-sahifa').then((m) => m.BoshSahifa),
   },
-  { path: 'login', component: Login },
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login').then((m) => m.Login),
+  },
   {
     path: 'mevalar',
-    component: Mevalar,
+    loadComponent: () => import('./pages/mevalar/mevalar').then((m) => m.Mevalar),
   },
   {
     path: 'savat',
-    component: Savat,
+
+    loadComponent: () => import('./pages/savat/savat').then((m) => m.Savat),
   },
-  { path: 'meva-forma', component: MevaForma, canActivate: [authGuard] },
+  {
+    path: 'meva-forma',
+    loadComponent: () => import('./pages/meva-forma/meva-forma').then((m) => m.MevaForma),
+    canActivate: [authGuard],
+  },
 ];
